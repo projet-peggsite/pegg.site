@@ -24,15 +24,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-tech-purple rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-              <div className="relative px-4 py-2 bg-dark-900 rounded-lg">
-                <span className="font-bold text-xl bg-gradient-to-r from-primary-400 to-tech-purple bg-clip-text text-transparent">
-                  PEGG
-                </span>
-              </div>
-            </div>
+          <Link href="/" className="flex items-center space-x-3 group">
+            <img src="/header.png" alt="Pegg Site" className="h-20 w-auto rounded-md" />
+            <span className="sr-only">Pegg Site</span>
           </Link>
 
           {/* Desktop Navigation */}

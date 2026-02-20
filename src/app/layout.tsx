@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     url: 'https://pegg-site.com',
     siteName: 'Pegg Site',
     type: 'website',
+    images: ['/logo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/logo.png'],
   },
 };
 

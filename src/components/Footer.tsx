@@ -46,11 +46,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-tech-purple rounded-lg flex items-center justify-center">
-                <span className="font-bold text-white">P</span>
-              </div>
-              <span className="font-bold text-lg gradient-text">PEGG SITE</span>
+            <div className="flex items-center justify-center w-30 h-30 mb-4">
+              <img src="/logo.png" alt="Pegg Site" className="max-w-full max-h-full object-contain rounded-md" />
             </div>
             <p className="text-gray-400 text-sm mb-6">
               Transformez votre présence digitale avec expertise, innovation et résultats mesurables.
@@ -115,7 +112,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-primary-500/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-            <p>&copy; 2024 Pegg Site. Tous droits réservés.</p>
+            <p>&copy; 2026 Pegg Site. Tous droits réservés.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/" className="hover:text-primary-400 transition duration-300">
                 Mentions légales
