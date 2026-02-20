@@ -277,7 +277,7 @@ export default function ServicesPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div>
-          >
+          {'>'}
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="gradient-text">Prêt à démarrer?</span>
             </h2>
