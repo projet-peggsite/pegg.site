@@ -1,40 +1,21 @@
 {
   "buildCommand": "npm run build",
-  "dev": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
   "nodeVersion": "18.x",
   "public": true,
-  "env": [
-    {
-      "key": "NEXT_PUBLIC_SITE_URL",
-      "value": "https://pegg-site.vercel.app"
-    }
-  ],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://pegg-site.vercel.app"
+  },
   "headers": [
     {
       "source": "/:path*",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "geolocation=(), microphone=(), camera=()"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
       ]
     }
   ],
