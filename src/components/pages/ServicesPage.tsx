@@ -274,26 +274,26 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div>
-          
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Prêt à démarrer?</span>
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons transformer votre présence digitale
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-tech-purple rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all duration-300"
-            >
-              Demander une Consultation
-              <FiArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section */}
+<section className="py-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-4xl mx-auto text-center">
+    <div>
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <span className="gradient-text">Prêt à démarrer?</span>
+      </h2>
+      <p className="text-xl text-gray-400 mb-8">
+        Contactez-nous pour une consultation gratuite et découvrez comment nous pouvons transformer votre présence digitale
+      </p>
+      <Link
+        href="/contact"
+        className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-500 to-tech-purple rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all duration-300"
+      >
+        Demander une Consultation
+        <FiArrowRight className="w-5 h-5 ml-2" />
+      </Link>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
