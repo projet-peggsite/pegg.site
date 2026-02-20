@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /*.json$
+
+Sitemap: https://pegg-site.com/sitemap.xml
+
+User-agent: googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
