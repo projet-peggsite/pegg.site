@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const stats = [
   { label: 'Projets Livrés', value: 150, suffix: '+' },
@@ -12,24 +12,48 @@ const stats = [
 
 const Counter = ({ end, suffix = '' }: { end: number; suffix?: string }) => {
   const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const started = useRef(false);
 
   useEffect(() => {
-    const duration = 2000; // 2 seconds
-    const increment = end / (duration / 50);
+    const el = ref.current;
+    if (!el) return;
 
-    const timer = setInterval(() => {
-      setCount((prev) => {
-        const next = prev + increment;
-        return next >= end ? end : next;
-      });
-    }, 50);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !started.current) {
+            started.current = true;
+            const duration = 1500; // ms
+            const start = performance.now();
 
-    return () => clearInterval(timer);
+            const step = (now: number) => {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+              const value = Math.floor(eased * end);
+              setCount(value);
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              } else {
+                setCount(end);
+                observer.disconnect();
+              }
+            };
+
+            requestAnimationFrame(step);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [end]);
 
   return (
-    <span>
-      {Math.floor(count)}
+    <span ref={ref}>
+      {count}
       {suffix}
     </span>
   );

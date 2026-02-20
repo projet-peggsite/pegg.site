@@ -231,3 +231,9 @@ Créé avec Next.js, React, TypeScript, Tailwind CSS et Framer Motion.
 ---
 
 **Transformez votre présence digitale avec Pegg Site** 🚀
+
+## Pousser vers github
+
+git add .
+git commit -m "update"
+git push
