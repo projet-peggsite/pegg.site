@@ -5,12 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "cross-env NODE_OPTIONS= next build",
     "start": "next start",
     "lint": "next lint"
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,6 +27,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "typescript": "^5.0.0",
+    "cross-env": "^7.0.3",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
     "eslint": "^8.50.0",
