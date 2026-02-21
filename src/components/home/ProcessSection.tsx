@@ -59,7 +59,7 @@ const itemVariants = {
 
 export default function ProcessSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="py-16 sm:py-20 px-3 sm:px-4 md:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -67,14 +67,14 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span className="gradient-text">Notre Méthodologie</span>
             <br />
             <span className="text-white">Processus Éprouvé & Transparent</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-2">
             Un processus structuré qui place la transparence et les résultats au centre de chaque projet
           </p>
         </motion.div>
@@ -85,7 +85,7 @@ export default function ProcessSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           {steps.map((step, index) => (
             <motion.div
@@ -93,47 +93,47 @@ export default function ProcessSection() {
               variants={itemVariants}
               className="relative group"
             >
-              {/* Connector Line */}
+              {/* Connector Line - Hidden on mobile */}
               {index < steps.length - 1 && (
-                <div className="absolute left-12 top-32 w-0.5 h-20 bg-gradient-to-b from-primary-500 to-tech-purple opacity-20"></div>
+                <div className="hidden sm:block absolute left-10 sm:left-12 top-24 sm:top-32 w-0.5 h-20 bg-gradient-to-b from-primary-500 to-tech-purple opacity-20"></div>
               )}
 
               {/* Step Card */}
-              <div className="flex gap-8">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
                 {/* Step Circle */}
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 flex justify-center sm:justify-start"
                 >
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-500/20 to-tech-purple/20 border-2 border-primary-500 flex items-center justify-center sticky top-32">
-                    <span className="text-3xl font-bold text-primary-400">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-primary-500/20 to-tech-purple/20 border-2 border-primary-500 flex items-center justify-center sticky top-24 sm:top-32">
+                    <span className="text-2xl sm:text-3xl font-bold text-primary-400">
                       {step.number}
                     </span>
                   </div>
                 </motion.div>
 
                 {/* Content */}
-                <div className="flex-1 pt-2 pb-8">
-                  <div className="bg-dark-800/50 backdrop-blur-sm border border-primary-500/10 rounded-xl p-8 group-hover:border-primary-500/30 transition-all duration-300">
+                <div className="flex-1 pt-0 sm:pt-2 pb-6 sm:pb-8">
+                  <div className="bg-dark-800/50 backdrop-blur-sm border border-primary-500/10 rounded-xl p-4 sm:p-6 md:p-8 group-hover:border-primary-500/30 transition-all duration-300">
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-white mb-3">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">
                       {step.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 mb-6">
+                    <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">
                       {step.description}
                     </p>
 
                     {/* Details */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                       {step.details.map((detail, detailIndex) => (
                         <div
                           key={detailIndex}
-                          className="flex items-center space-x-2 text-primary-400"
+                          className="flex items-start space-x-2 text-primary-400"
                         >
-                          <FiCheckCircle className="w-5 h-5 flex-shrink-0" />
-                          <span className="text-sm">{detail}</span>
+                          <FiCheckCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs sm:text-sm">{detail}</span>
                         </div>
                       ))}
                     </div>
