@@ -89,19 +89,18 @@ export default function PortfolioPage() {
                   className="group relative rounded-2xl overflow-hidden bg-dark-800 border border-primary-500/10 hover:border-primary-500/30 transition-all duration-300"
                 >
                   {/* Image */}
-                  <div className={`h-48 ${project.image} relative overflow-hidden`}>
+                  <div className="h-48 relative overflow-hidden bg-dark-700">
+                    {project.image.endsWith('.svg') ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className={`h-48 ${project.image} relative overflow-hidden`}></div>
+                    )}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    />
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                      }}
-                      className="absolute inset-0"
                     />
                   </div>
 

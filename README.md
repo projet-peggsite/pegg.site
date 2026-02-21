@@ -216,9 +216,9 @@ docker run -p 3000:3000 pegg-site
 
 ## 📞 Support & Contact
 
-- **Phone** : +33 (0)1 23 45 67 89
-- **Email** : contact@pegg-site.com
-- **Adresse** : Paris, France
+- **Phone** : +242 06 989 9982
+- **Email** : contact@pegg.site
+- **Adresse** : Pointe-Noire, Congo
 
 ## 📝 Licence
 

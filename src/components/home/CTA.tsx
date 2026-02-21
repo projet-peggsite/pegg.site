@@ -81,14 +81,14 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row justify-center gap-8 text-gray-400 text-sm">
             <div className="flex items-center space-x-2">
               <FiPhone className="w-5 h-5 text-primary-400" />
-              <a href="tel:+33123456789" className="hover:text-primary-400 transition-colors">
-                +33 (0)1 23 45 67 89
+              <a href="tel:+24206989982" className="hover:text-primary-400 transition-colors">
+                +242 06 989 9982
               </a>
             </div>
             <div className="flex items-center space-x-2">
               <FiMail className="w-5 h-5 text-primary-400" />
-              <a href="mailto:contact@pegg-site.com" className="hover:text-primary-400 transition-colors">
-                contact@pegg-site.com
+              <a href="mailto:contact@pegg.site" className="hover:text-primary-400 transition-colors">
+                contact@pegg.site
               </a>
             </div>
           </div>

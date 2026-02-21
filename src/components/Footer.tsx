@@ -95,15 +95,15 @@ export default function Footer() {
             <div className="space-y-3 text-gray-400 text-sm">
               <div className="flex items-start space-x-2">
                 <FiPhone className="w-4 h-4 mt-1 text-primary-400 flex-shrink-0" />
-                <span>+33 1 23 45 67 89</span>
+                <span>+242 06 989 9982</span>
               </div>
               <div className="flex items-start space-x-2">
                 <FiMail className="w-4 h-4 mt-1 text-primary-400 flex-shrink-0" />
-                <span>contact@pegg-site.com</span>
+                <span>contact@pegg.site</span>
               </div>
               <div className="flex items-start space-x-2">
                 <FiMapPin className="w-4 h-4 mt-1 text-primary-400 flex-shrink-0" />
-                <span>Paris, France</span>
+                <span>Pointe-Noire, Congo</span>
               </div>
             </div>
           </div>

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import ContactPage from '@/components/pages/ContactPage';
+import SimpleContactPage from '@/components/pages/SimpleContactPage';
 
 export const metadata: Metadata = {
-  title: 'Contact & Devis - Pegg Site | Démarrez Votre Projet',
-  description: 'Contactez Pegg Site pour une consultation gratuite et reçoivre un devis personnalisé pour votre projet digitale.',
-  keywords: 'contact, devis, consultation, formulaire',
+  title: 'Contact - Pegg Site | Nous Contacter',
+  description: 'Contactez Pegg Site avec vos questions et demandes. Notre équipe vous répondra rapidement.',
+  keywords: 'contact, support, nous contacter',
 };
 
 export default function Contact() {
-  return <ContactPage />;
+  return <SimpleContactPage />;
 }

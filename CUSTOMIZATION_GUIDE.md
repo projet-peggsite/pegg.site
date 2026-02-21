@@ -10,21 +10,21 @@ Mettez à jour votre numéro de téléphone, email et adresse dans ces fichiers 
 
 📄 src/components/Footer.tsx (Ligne ~45-65)
 ```javascript
-<span>+33 1 23 45 67 89</span>          // ← Votre numéro
-<span>contact@pegg-site.com</span>      // ← Votre email
-<span>Paris, France</span>              // ← Votre adresse
+<span>+242 06 989 9982</span>            // ← Votre numéro
+<span>contact@pegg.site</span>           // ← Votre email
+<span>Pointe-Noire, Congo</span>         // ← Votre adresse
 ```
 
 📄 src/components/home/CTA.tsx (Ligne ~65-75)
 ```javascript
-<a href="tel:+33123456789">...</a>      // ← Votre téléphone
-<a href="mailto:contact@pegg-site.com">...</a>  // ← Votre email
+<a href="tel:+24206989982">...</a>      // ← Votre téléphone
+<a href="mailto:contact@pegg.site">...</a>  // ← Votre email
 ```
 
 📄 src/components/pages/ContactPage.tsx (Ligne ~185-195)
 ```javascript
-<p>+33 (0)1 23 45 67 89</p>             // ← Votre téléphone
-<p>contact@pegg-site.com</p>            // ← Votre email
+<p>+242 06 989 9982</p>                 // ← Votre téléphone
+<p>contact@pegg.site</p>                // ← Votre email
 ```
 
 🎯 2. LOGO & BRANDING

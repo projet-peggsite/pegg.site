@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import LiveChat from '@/components/LiveChat';
+import SupportWidget from '@/components/SupportWidget';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -43,6 +45,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <LiveChat />
+        <SupportWidget />
       </body>
     </html>
   );

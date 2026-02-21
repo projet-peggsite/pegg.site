@@ -344,10 +344,10 @@ export default function ContactPage() {
         <div className="mt-12 text-center text-gray-400">
           <p className="mb-4">Besoin d'assistance immédiate?</p>
           <p className="mb-2">
-            <strong className="text-white">Téléphone:</strong> +33 (0)1 23 45 67 89
+            <strong className="text-white">Téléphone:</strong> +242 06 989 9982
           </p>
           <p>
-            <strong className="text-white">Email:</strong> contact@pegg-site.com
+            <strong className="text-white">Email:</strong> contact@pegg.site
           </p>
         </div>
       </div>
