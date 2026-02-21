@@ -22,7 +22,7 @@ const HeroImage = ({ title }: { title: string }) => {
   const palette = Object.entries(colors).find(([key]) => title.includes(key))?.[1] || ['#0ea5e9', '#a855f7', '#ec4899'];
 
   return (
-    <div className="relative w-full h-80 bg-gradient-to-br from-slate-900 to-slate-950 overflow-hidden rounded-xl">
+    <div className="relative w-full h-56 md:h-80 bg-gradient-to-br from-slate-900 to-slate-950 overflow-hidden rounded-xl">
       <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id={`grad-${title}`} x1="0%" y1="0%" x2="100%" y2="100%">
@@ -118,7 +118,7 @@ export default function PortfolioDetail({ portfolio }: PortfolioDetailProps) {
               {portfolio.category}
             </motion.span>
 
-            <motion.h1 variants={itemVariants} className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
+            <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
               {portfolio.title}
             </motion.h1>
 
@@ -160,14 +160,14 @@ export default function PortfolioDetail({ portfolio }: PortfolioDetailProps) {
               className="mb-12"
             >
               {portfolio.image.endsWith('.svg') ? (
-                <img
-                  src={portfolio.image}
-                  alt={portfolio.title}
-                  className="w-full rounded-xl"
-                />
-              ) : (
-                <HeroImage title={portfolio.title} />
-              )}
+                  <img
+                    src={portfolio.image}
+                    alt={portfolio.title}
+                    className="w-full h-56 md:h-80 object-cover rounded-xl"
+                  />
+                ) : (
+                  <HeroImage title={portfolio.title} />
+                )}
             </motion.div>
 
             {/* Quick Info */}
@@ -326,7 +326,7 @@ export default function PortfolioDetail({ portfolio }: PortfolioDetailProps) {
               {/* Goals */}
               <motion.div
                 variants={itemVariants}
-                className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 p-8 rounded-xl sticky top-32 hover:border-blue-500/50 transition-colors duration-300"
+                className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 p-8 rounded-xl lg:sticky lg:top-32 hover:border-blue-500/50 transition-colors duration-300"
               >
                 <h3 className="text-lg font-black text-white mb-6 flex items-center gap-2">
                   <FiTarget className="w-5 h-5 text-blue-400" />

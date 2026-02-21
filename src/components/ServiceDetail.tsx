@@ -93,7 +93,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="flex items-start gap-6">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <motion.div whileHover={{ scale: 1.1 }} className={`p-4 bg-dark-800 rounded-lg ${textColorClasses[service.color as keyof typeof textColorClasses]}`}>
                 <Icon className="w-8 h-8" />
               </motion.div>
@@ -101,7 +101,7 @@ export default function ServiceDetail({ service }: ServiceDetailProps) {
                 <p className={`text-sm font-semibold ${textColorClasses[service.color as keyof typeof textColorClasses]} mb-2`}>
                   Service
                 </p>
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
                   {service.title}
                 </h1>
                 <p className="text-xl text-gray-300 max-w-3xl">
