@@ -2,6 +2,13 @@
 
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    $crisp?: unknown[];
+    CRISP_WEBSITE_ID?: string;
+  }
+}
+
 export default function LiveChat() {
   useEffect(() => {
     // Initialize Crisp Chat
