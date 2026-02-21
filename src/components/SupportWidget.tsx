@@ -5,14 +5,16 @@ import { motion } from 'framer-motion';
 import { FiMessageCircle, FiX, FiPhone, FiMail } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 
-/**
- * Déclaration globale correcte pour Crisp
- * (NE PAS redéclarer ailleurs dans le projet)
- */
 declare global {
   interface Window {
-    $crisp?: unknown[];
-    CRISP_WEBSITE_ID?: string;
+    chatwootSettings?: {
+      hideMessageBubble?: boolean;
+      position?: string;
+      locale?: string;
+    };
+    chatwootSDK?: {
+      run: (config: { websiteToken: string; baseUrl: string }) => void;
+    };
   }
 }
 
@@ -26,8 +28,24 @@ export default function SupportWidget() {
       description: 'Chat instantané',
       color: 'from-blue-500 to-cyan-500',
       action: () => {
-        if (typeof window !== 'undefined' && window.$crisp) {
-          (window.$crisp as unknown[]).push(['do', 'chat:open']);
+        if (typeof window !== 'undefined') {
+          // Afficher le bubble Chatwoot si présent
+          const bubble = document.querySelector('.chatwoot-bubble-launcher');
+          if (bubble) {
+            (bubble as HTMLElement).style.display = 'block';
+            // Simuler un clic sur le lanceur pour ouvrir le chat
+            try {
+              (bubble as HTMLElement).click();
+            } catch (e) {
+              // ignore
+            }
+            return;
+          }
+
+          // Fallback: si le SDK expose une API d'ouverture, essayer
+          if (window.chatwootSDK && typeof (window.chatwootSDK as any).toggle === 'function') {
+            (window.chatwootSDK as any).toggle();
+          }
         }
       },
     },

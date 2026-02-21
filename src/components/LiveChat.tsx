@@ -4,22 +4,47 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    $crisp?: unknown[];
-    CRISP_WEBSITE_ID?: string;
+    chatwootSettings?: {
+      hideMessageBubble?: boolean;
+      position?: string;
+      locale?: string;
+    };
+    chatwootSDK?: {
+      run: (config: { websiteToken: string; baseUrl: string }) => void;
+    };
   }
 }
 
 export default function LiveChat() {
   useEffect(() => {
-    // Initialize Crisp Chat
-    // Sign up at https://crisp.chat and get your WEBSITE_ID
-    
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = 'YOUR_CRISP_WEBSITE_ID'; // Replace with your ID
-    
+    // Initialize Chatwoot Chat
+    // Sign up at https://app.chatwoot.com and get your WEBSITE_TOKEN
+
+    // Ajouter du CSS pour cacher le bubble Chatwoot par défaut
+    const style = document.createElement('style');
+    style.textContent = `
+      .chatwoot-bubble-launcher { display: none !important; }
+    `;
+    document.head.appendChild(style);
+
+    window.chatwootSettings = {
+      hideMessageBubble: true,
+      position: 'right',
+      locale: 'fr',
+    };
+
     const script = document.createElement('script');
-    script.src = 'https://client.crisp.chat/l.js';
+    script.src = 'https://app.chatwoot.com/packs/js/sdk.js';
     script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      if (typeof window !== 'undefined' && window.chatwootSDK) {
+        window.chatwootSDK.run({
+          websiteToken: 'YOUR_CHATWOOT_WEBSITE_TOKEN', // Replace with your token
+          baseUrl: 'https://app.chatwoot.com',
+        });
+      }
+    };
     document.body.appendChild(script);
 
     return () => {
@@ -27,5 +52,5 @@ export default function LiveChat() {
     };
   }, []);
 
-  return null; // Crisp widget is injected globally
+  return null; // Chatwoot widget is injected globally
 }
