@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Services', href: '/services' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'À Propos', href: '/about' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Marketing Automation', href: '/marketing-automation' },
   { label: 'Contact', href: '/contact' },
 ];

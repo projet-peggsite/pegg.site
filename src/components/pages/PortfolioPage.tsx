@@ -4,114 +4,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FiArrowRight, FiExternalLink, FiBarChart2 } from 'react-icons/fi';
+import { portfolios } from '@/data/portfolios';
 
-const portfolioProjects = [
-  {
-    id: 1,
-    title: 'TechFlow - Platform SaaS',
-    category: 'SaaS',
-    client: 'TechFlow Inc',
-    roi: '+320%',
-    traffic: '+180%',
-    description: 'Plateforme SaaS complète avec dashboard analytics avancé',
-    image: 'bg-gradient-to-br from-primary-500 to-primary-600',
-    tags: ['Next.js', 'React', 'TypeScript', 'PostgreSQL'],
-    results: [
-      { metric: 'Utilisateurs actifs', value: '45K+' },
-      { metric: 'Taux conversion', value: '12.5%' },
-      { metric: 'Croissance MoM', value: '+28%' },
-    ],
-  },
-  {
-    id: 2,
-    title: 'EcoShop - E-commerce',
-    category: 'E-commerce',
-    client: 'EcoShop',
-    roi: '+450%',
-    traffic: '+240%',
-    description: 'Plateforme e-commerce durable avec intégration paiement',
-    image: 'bg-gradient-to-br from-tech-green to-tech-cyan',
-    tags: ['Next.js', 'Stripe', 'Inventory', 'Analytics'],
-    results: [
-      { metric: 'Transactions/mois', value: '8.2K' },
-      { metric: 'AOV', value: '+35%' },
-      { metric: 'Retention', value: '68%' },
-    ],
-  },
-  {
-    id: 3,
-    title: 'DigitalHub - Marketing Site',
-    category: 'Marketing',
-    client: 'DigitalHub Agency',
-    roi: '+280%',
-    traffic: '+156%',
-    description: 'Site marketing haute conversion avec animations fluides',
-    image: 'bg-gradient-to-br from-tech-purple to-tech-pink',
-    tags: ['React', 'Framer Motion', 'Tailwind', 'CMS'],
-    results: [
-      { metric: 'Conversion rate', value: '8.3%' },
-      { metric: 'Leads/mois', value: '1.2K' },
-      { metric: 'CLTV', value: '+180%' },
-    ],
-  },
-  {
-    id: 4,
-    title: 'FitApp - Mobile App',
-    category: 'Application',
-    client: 'FitApp',
-    roi: '+380%',
-    traffic: '+195%',
-    description: 'Application fitness avec suivi d\'performances',
-    image: 'bg-gradient-to-br from-primary-400 to-primary-500',
-    tags: ['React Native', 'Firebase', 'Notifications', 'Analytics'],
-    results: [
-      { metric: 'Downloads', value: '125K+' },
-      { metric: 'User retention', value: '42%' },
-      { metric: 'Rating', value: '4.8 ⭐' },
-    ],
-  },
-  {
-    id: 5,
-    title: 'ConsultHub - B2B Portal',
-    category: 'B2B',
-    client: 'ConsultHub',
-    roi: '+220%',
-    traffic: '+134%',
-    description: 'Portail B2B avec matching experts-clients',
-    image: 'bg-gradient-to-br from-accent-500 to-primary-500',
-    tags: ['Next.js', 'Node.js', 'ML Matching', 'Real-time'],
-    results: [
-      { metric: 'Transactions', value: '$2.4M' },
-      { metric: 'Success rate', value: '87%' },
-      { metric: 'NPS Score', value: '72' },
-    ],
-  },
-  {
-    id: 6,
-    title: 'BlogMaster - Publishing Platform',
-    category: 'SEO',
-    client: 'BlogMaster',
-    roi: '+185%',
-    traffic: '+420%',
-    description: 'Plateforme de publication avec SEO avancé',
-    image: 'bg-gradient-to-br from-tech-pink to-tech-purple',
-    tags: ['Next.js', 'Headless CMS', 'SEO', 'Analytics'],
-    results: [
-      { metric: 'Articles/mois', value: '2.3K' },
-      { metric: 'Organic traffic', value: '+420%' },
-      { metric: 'Ranking #1', value: '256 keywords' },
-    ],
-  },
-];
-
-const categories = ['Tous', ...new Set(portfolioProjects.map(p => p.category))];
+const categories = ['Tous', ...new Set(portfolios.map(p => p.category))];
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('Tous');
 
   const filteredProjects = activeCategory === 'Tous'
-    ? portfolioProjects
-    : portfolioProjects.filter(p => p.category === activeCategory);
+    ? portfolios
+    : portfolios.filter(p => p.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-dark-900 pt-20">
@@ -266,13 +168,18 @@ export default function PortfolioPage() {
                     </div>
 
                     {/* CTA */}
-                    <motion.button
-                      whileHover={{ x: 5 }}
-                      className="w-full flex items-center justify-center px-4 py-2 bg-gradient-to-r from-primary-500/10 to-tech-purple/10 border border-primary-500/20 rounded-lg text-primary-400 font-semibold text-sm group-hover:border-primary-500/50 group-hover:bg-gradient-to-r group-hover:from-primary-500/20 group-hover:to-tech-purple/20 transition-all duration-300"
+                    <Link
+                      href={`/portfolio/${project.slug}`}
+                      className="w-full"
                     >
-                      Voir le cas {' '}
-                      <FiArrowRight className="w-4 h-4 ml-2" />
-                    </motion.button>
+                      <motion.button
+                        whileHover={{ x: 5 }}
+                        className="w-full flex items-center justify-center px-4 py-2 bg-gradient-to-r from-primary-500/10 to-tech-purple/10 border border-primary-500/20 rounded-lg text-primary-400 font-semibold text-sm group-hover:border-primary-500/50 group-hover:bg-gradient-to-r group-hover:from-primary-500/20 group-hover:to-tech-purple/20 transition-all duration-300"
+                      >
+                        Voir le cas {' '}
+                        <FiArrowRight className="w-4 h-4 ml-2" />
+                      </motion.button>
+                    </Link>
                   </div>
                 </motion.div>
               ))}

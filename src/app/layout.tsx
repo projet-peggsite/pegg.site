@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <meta charSet="utf-8" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/header.png" sizes="any" type="image/png" />
       </head>
       <body className="bg-dark-900 text-gray-100">
         <Header />
