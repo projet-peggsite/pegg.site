@@ -28,6 +28,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <img src="/header.png" alt="Pegg Site" className="h-20 w-auto rounded-md" />
+            <img src="/pegg.png" alt="Pegg Logo" className="h-20 w-auto rounded-md" />
             <span className="sr-only">Pegg Site</span>
           </Link>
 

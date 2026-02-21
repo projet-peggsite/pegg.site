@@ -7,6 +7,7 @@ const servicesDetail = [
   {
     id: 1,
     title: 'Conception & Développement Web',
+    slug: 'conception-developpement-web',
     subtitle: 'Sites web modernes qui convertissent',
     description: 'Sites web modernes, responsifs et performants. Architectures scalables pour votre croissance.',
     icon: FiCode,
@@ -25,6 +26,7 @@ const servicesDetail = [
   {
     id: 2,
     title: 'Création d\'Application',
+    slug: 'creation-application-mobile',
     subtitle: 'Applications performantes cross-platform',
     description: 'Applications mobiles et web natives. Expériences utilisateur exceptionnelles et engagement maximal.',
     icon: FiSmartphone,
@@ -43,6 +45,7 @@ const servicesDetail = [
   {
     id: 3,
     title: 'Optimisation de la Performance',
+    slug: 'optimisation-performance',
     subtitle: 'Chaque milliseconde compte',
     description: 'Vitesse, Core Web Vitals et UX fluidité. Chaque milliseconde compte pour la conversion.',
     icon: FiZap,
@@ -61,6 +64,7 @@ const servicesDetail = [
   {
     id: 4,
     title: 'SEO Technique & Contenu',
+    slug: 'seo-technique-contenu',
     subtitle: 'Dominez les résultats de recherche',
     description: 'Dominez les résultats de recherche. Stratégies SEO complètes pour une visibilité maximale.',
     icon: FiSearch,
@@ -79,6 +83,7 @@ const servicesDetail = [
   {
     id: 5,
     title: 'Design & Branding',
+    slug: 'design-branding',
     subtitle: 'Identités visuelles qui marquent',
     description: 'Identités visuelles fortes et cohérentes. Designs qui racontent votre histoire et captent l\'attention.',
     icon: FiEdit3,
@@ -96,25 +101,27 @@ const servicesDetail = [
   },
   {
     id: 6,
-    title: 'Stratégies Digitales Orientées ROI',
-    subtitle: 'Mesurable, transparent et profitable',
-    description: 'Chaque action digitale doit générer du ROI. Approche data-driven, résultats mesurables.',
-    icon: FiTrendingUp,
-    color: 'accent',
+    title: 'Gestion des Projets Informatiques',
+    slug: 'gestion-projets-informatiques',
+    subtitle: 'Livraison à temps, dans le budget',
+    description: 'Gérez vos projets informatiques avec rigueur: planification, suivi, équipes dédiées et reporting transparent.',
+    icon: FiRefreshCw,
+    color: 'primary',
     benefits: [
-      'Stratégie digitale personnalisée',
-      'Setup analytics avancé',
-      'KPI tracking et reporting',
-      'Optimisation continue (CRO)',
-      'A/B testing structuré',
-      'Augmentation ROI garantie',
+      'Méthodologie agile éprouvée',
+      'Transparence complète du projet',
+      'Livraison prévisible',
+      'Contrôle budgétaire strict',
+      'Équipes dédiées et stables',
+      'Risques identifiés et mitigés',
     ],
-    technologies: ['Google Analytics 4', 'GTM', 'Looker Studio', 'Hotjar', 'Mixpanel'],
+    technologies: ['Jira', 'Confluence', 'GitLab', 'Jenkins', 'Slack', 'Azure DevOps'],
     videoUrl: '#',
   },
   {
     id: 7,
     title: 'Marketing Automation & Acquisition',
+    slug: 'marketing-automation-acquisition',
     subtitle: 'Croissance automatisée et scalable',
     description: 'Tunnels de vente automatisés. Acquisition scalable et nurturing automatique des prospects.',
     icon: FiRefreshCw,
@@ -133,6 +140,7 @@ const servicesDetail = [
   {
     id: 8,
     title: 'Maintenance & Support',
+    slug: 'maintenance-support',
     subtitle: 'Disponible 24/7 pour votre tranquillité',
     description: 'Maintenance proactive, mises à jour et support 24/7. Votre infrastructure reste optimale.',
     icon: FiCheckCircle,
@@ -232,13 +240,23 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-tech-purple rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all duration-300"
-                    >
-                      Discuter de ce service
-                      <FiArrowRight className="w-5 h-5 ml-2" />
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 items-start">
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-tech-purple rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-primary-500/50 transition-all duration-300"
+                      >
+                        En savoir plus
+                        <FiArrowRight className="w-5 h-5 ml-2" />
+                      </Link>
+
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center px-6 py-3 border-2 border-primary-500/50 text-primary-300 rounded-lg font-semibold hover:border-primary-500 hover:text-primary-200 transition-all duration-300"
+                      >
+                        Discuter
+                        <FiArrowRight className="w-5 h-5 ml-2" />
+                      </Link>
+                    </div>
                   </div>
 
                   {/* Visual Element */}

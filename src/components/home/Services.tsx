@@ -9,6 +9,7 @@ import {
   FiSearch,
   FiLayout,
   FiTrendingUp,
+  FiRefreshCw,
   FiRepeat,
   FiCheckCircle,
   FiArrowRight,
@@ -18,6 +19,7 @@ const services = [
   {
     id: 1,
     title: 'Conception & Développement Web',
+    slug: 'conception-developpement-web',
     description: 'Sites web modernes, responsifs et performants. Architectures scalables pour votre croissance.',
     icon: FiCode,
     gradient: 'from-primary-500 to-primary-600',
@@ -27,6 +29,7 @@ const services = [
   {
     id: 2,
     title: 'Création d\'Application',
+    slug: 'creation-application-mobile',
     description: 'Applications mobiles et web natives. Expériences utilisateur exceptionnelles et engagement maximal.',
     icon: FiSmartphone,
     gradient: 'from-tech-cyan to-primary-500',
@@ -36,6 +39,7 @@ const services = [
   {
     id: 3,
     title: 'Optimisation de la Performance',
+    slug: 'optimisation-performance',
     description: 'Vitesse, Core Web Vitals et UX fluidité. Chaque milliseconde compte pour la conversion.',
     icon: FiZap,
     gradient: 'from-tech-green to-tech-cyan',
@@ -45,6 +49,7 @@ const services = [
   {
     id: 4,
     title: 'SEO Technique & Contenu',
+    slug: 'seo-technique-contenu',
     description: 'Dominez les résultats de recherche. Stratégies SEO complètes pour une visibilité maximale.',
     icon: FiSearch,
     gradient: 'from-tech-purple to-tech-pink',
@@ -54,6 +59,7 @@ const services = [
   {
     id: 5,
     title: 'Design & Branding',
+    slug: 'design-branding',
     description: 'Identités visuelles fortes et cohérentes. Designs qui racontent votre histoire et captent l\'attention.',
     icon: FiLayout,
     gradient: 'from-tech-pink to-tech-purple',
@@ -62,16 +68,18 @@ const services = [
   },
   {
     id: 6,
-    title: 'Stratégies Digitales Orientées ROI',
-    description: 'Chaque action digitale doit générer du ROI. Approche data-driven, résultats mesurables.',
-    icon: FiTrendingUp,
-    gradient: 'from-accent-500 to-tech-green',
-    color: 'text-accent-400',
-    features: ['Analytics Setup', 'KPI Tracking', 'Optimization Cycles'],
+    title: 'Gestion des Projets Informatiques',
+    slug: 'gestion-projets-informatiques',
+    description: 'Gérez vos projets informatiques avec rigueur: planification, suivi, équipes dédiées et reporting transparent.',
+    icon: FiRefreshCw,
+    gradient: 'from-primary-500 to-tech-cyan',
+    color: 'text-primary-400',
+    features: ['Méthodologie Agile', 'Tracking Transparent', 'Livraison Prévisible'],
   },
   {
     id: 7,
     title: 'Marketing Automation & Acquisition',
+    slug: 'marketing-automation-acquisition',
     description: 'Tunnnels de vente automatisés. Acquisition scalable et nurturing automatique des prospects.',
     icon: FiRepeat,
     gradient: 'from-primary-400 to-tech-cyan',
@@ -81,6 +89,7 @@ const services = [
   {
     id: 8,
     title: 'Maintenance & Support',
+    slug: 'maintenance-support',
     description: 'Maintenance proactive, mises à jour et support 24/7. Votre infrastructure reste optimale.',
     icon: FiCheckCircle,
     gradient: 'from-tech-green to-primary-500',
@@ -188,7 +197,7 @@ export default function Services() {
 
                   {/* Learn More Link */}
                   <Link
-                    href="/services"
+                    href={`/services/${service.slug}`}
                     className="inline-flex items-center text-primary-400 hover:text-primary-300 group/link transition-colors"
                   >
                     <span className="text-sm font-medium">En savoir plus</span>

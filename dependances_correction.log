@@ -1,0 +1,34 @@
+1️⃣ Ferme VS Code complètement
+
+Important pour libérer les fichiers verrouillés.
+
+2️⃣ Supprime TOUT manuellement
+
+Dans D:\pesi, supprime :
+
+node_modules
+
+.next
+
+package-lock.json (si présent)
+
+Si PowerShell bloque, supprime-les directement via l’explorateur Windows.
+
+3️⃣ Nettoie le cache npm global
+
+Exécute :
+
+npm cache clean --force
+
+Ensuite :
+
+npm cache verify
+4️⃣ Réinstalle avec audit désactivé (plus stable)
+npm install --no-audit --no-fund
+5️⃣ Installe une version stable de framer-motion
+
+Ne prends PAS latest.
+
+npm install framer-motion@11.0.0
+6️⃣ Lance le projet
+npm run dev
